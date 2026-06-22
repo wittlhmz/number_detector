@@ -44,5 +44,27 @@ Nach einer kleinen Änderung hat auch dieses Feature funktioniert und dafür, da
 Insgesamt macht Vibe-coden schon Spaß, da AI einfach viel schneller Code generieren kann, sodass für den Anwender mehr Zeit bleibt, um über Features und UI nachzudenken.
 Bei etwas größeren Projekten könnte es allerdings zu Problemen kommen.
 
+---
 
+## Das Modell
+
+Verwendet wird ein **Convolutional Neural Network (CNN)**, das auf dem MNIST-Datensatz basiert. Die Architektur besteht aus drei Faltungsschichten, die zunehmend komplexere Muster erkennen, gefolgt von vollständig verbundenen Schichten zur Klassifikation:
+
+```
+Conv2D(32) → MaxPooling → Conv2D(64) → MaxPooling → Conv2D(64)
+→ Flatten → Dense(128) → Dropout(0.4) → Dense(11, softmax)
+```
+
+Die 11. Ausgabe-Klasse (`?`) wurde nachträglich ergänzt, damit das Modell auch erkennen kann, wenn gar keine Ziffer gezeichnet wurde.
+
+## Das Training
+
+Trainiert wurde auf insgesamt **80.000 Bildern** in 10 Epochen:
+
+- **60.000 Ziffern-Bilder** aus MNIST (Klassen 0–9)
+- **20.000 synthetische Nicht-Ziffern** als Klasse 10 – darunter zufällige Linien, Rechtecke, Dreiecke, Häuser, Kreuze und Rauschen
+
+Da die Klassen stark ungleich verteilt waren (60.000 vs. 20.000), wurden **Klassen-Gewichte** eingesetzt, damit das Modell die seltene Klasse 10 nicht ignoriert. Zusätzlich wurde **Data Augmentation** (leichte Rotation und Verschiebung) verwendet, um das Modell robuster gegen unterschiedliche Schreibstile zu machen – was vor allem bei der problematischen „1" geholfen hat.
+
+Das Ergebnis: **98,7 % Gesamtgenauigkeit** auf dem Testset und **99,8 % Erkennungsrate** für die Unbekannt-Klasse.
 
