@@ -55,7 +55,7 @@ Conv2D(32) → MaxPooling → Conv2D(64) → MaxPooling → Conv2D(64)
 → Flatten → Dense(128) → Dropout(0.4) → Dense(11, softmax)
 ```
 
-Die 11. Ausgabe-Klasse (`?`) wurde nachträglich ergänzt, damit das Modell auch erkennen kann, wenn gar keine Ziffer gezeichnet wurde.
+Die 11. Ausgabe-Klasse wurde nachträglich ergänzt, damit das Modell auch erkennen kann, wenn gar keine Ziffer gezeichnet wurde.
 
 ## Das Training
 
