@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtuelle Umgebung
+venv/
+
+# Trainiertes Modell (wird durch train.py erzeugt)
+model/
+
+# Heruntergeladene Datensätze
+~/tensorflow_datasets/
+
+# IDE
+.idea/
+
+# Sonstiges
+*.log
