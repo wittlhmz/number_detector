@@ -23,7 +23,7 @@ python app.py        # App starten
 
 Zunächst habe ich die AGENTS.md Datei erstellen lassen, die dazu dient, dass der AI-Agent immer genau weiß, was das Projekt beinhaltet, also was das Ziel der Aufgabe ist, was schon ausgeführt wurde, wie der Aufbau ist usw.
 Nach ca. 15 Minuten war das Tool auch schon fertig und es hat tatsächlich einigermaßen funktioniert.
-Es gab zum Teil Probleme beim erkennen von der "1", was allerdings an den Trainingsdaten lag. In den USA schreibt man die 1 scheinbar nur als vertikalen Strich, sodass die 1 in der Praxis oft als 7 erkannt wurde.
+Es gab zum Teil Probleme beim erkennen von der "1", was allerdings an den Trainingsdaten lag. In den USA schreibt man die 1 scheinbar nur als vertikalen Strich, sodass die 1 in der Praxis oft als 7 oder auch als 2 erkannt wurde.
 
 <p align="center">
   <img src="output/1nichterkannt.png" width="800"/>
